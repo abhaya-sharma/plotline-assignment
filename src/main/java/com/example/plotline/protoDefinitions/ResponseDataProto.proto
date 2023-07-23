@@ -1,0 +1,28 @@
+syntax = "proto3";
+option java_package = "com.example.plotline.protoDefinitions";
+option java_outer_classname = "ResponseDataProto";
+
+message ResponseData{
+  repeated string attributes = 1;
+  repeated string compositeOffers = 2;
+  repeated string events = 3;
+  repeated string offerItems = 4;
+  repeated string journeys = 5;
+  repeated string metricEvents = 6;
+  MetricType metricType = 7;
+  repeated string noCodeEvents = 8;
+  repeated string productColors = 9;
+  string productId = 10;
+  int32 searchIntervalMillis = 11;
+  bool shouldEnableOffers = 12;
+  bool shouldEnableJourneys = 13;
+  bool shouldEnableNoCodeEvents = 14;
+  bool shouldRegisterAttributesEvents = 15;
+  repeated string discounts = 16;
+  repeated string widgets = 17;
+}
+//protoc -I=com\example\plotline\protoDefinitions --java_out=. com\example\plotline\protoDefinitions\RequestData.proto
+enum MetricType {
+  NULL_0 = 0;
+  NONE = 1;
+}
